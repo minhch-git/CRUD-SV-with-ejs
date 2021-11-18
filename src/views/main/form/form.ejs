@@ -1,0 +1,51 @@
+<% extend('../master') %>
+<div class="container">
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <h4 class="mt-4 mb-4 text-primary">Login</h4>
+      <form method="POST" action="/v1/auth/">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"
+            >Email address</label
+          >
+          <input
+            type="email"
+            class="form-control bg-dark text-primary"
+            id="exampleInputEmail1"
+            name="email"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input
+            type="password"
+            name="password"
+            class="form-control bg-dark text-primary"
+            id="exampleInputPassword1"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="hocBong" class="form-label">Hoc Bong: </label>
+          <input
+            type="number"
+            class="form-control bg-dark text-primary"
+            id="hocBong"
+            name="hocBong"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Gioi Tinh: </label>
+          <br />
+          <input type="radio" name="nu" , value="1" />
+          Nu <br />
+          <input type="radio" name="nu" , value="0" />Nam
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>

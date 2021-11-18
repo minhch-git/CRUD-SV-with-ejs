@@ -1,0 +1,42 @@
+<% extend('../master') %>
+<div class="container">
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <h4 class="mt-4 mb-4 text-primary">Info: <%- sinhVien.hoTen %></h4>
+      <form method="POST" action="/v1/auth/update-info/<%- sinhVien._id %>">
+        <div class="mb-3">
+          <label for="hoTen" class="form-label">Ho Ten</label>
+          <input
+            type="text"
+            class="form-control bg-dark text-primary"
+            id="hoTen"
+            value="<%- sinhVien.hoTen %>"
+            name="hoTen"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="hocBong" class="form-label">Hoc Bong: </label>
+          <input
+            value="<%- sinhVien.hocBong %>"
+            type="number"
+            class="form-control bg-dark text-primary"
+            id="hocBong"
+            name="hocBong"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Gioi Tinh: </label>
+          <br />
+          <input type="radio" name="nu" value="1" <%- sinhVien.nu ? "checked" :
+          "" %> /> Nu <br />
+          <input type="radio" name="nu" value="0" <%- sinhVien.nu ? "checked" :
+          "" %>/>Nam
+        </div>
+        <button type="submit" class="btn btn-primary">update</button>
+      </form>
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>

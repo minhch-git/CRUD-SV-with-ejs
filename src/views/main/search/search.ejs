@@ -1,0 +1,41 @@
+<% extend('../master') %>
+<!-- -------------------------------------------- -->
+<!-- --------------- SEARCH PAGE ---------------- -->
+<!-- -------------------------------------------- -->
+<div class="search">
+  <!-- Title -->
+  <div class="title_container d-none">
+    <span>Search</span>
+  </div>
+  <!-- content -->
+  <ul>
+    <% sinhViens.forEach(function(sinhVien){ %>
+    <li>------------------------------------</li>
+    <li>HoTen: <%- sinhVien.hoTen%></li>
+    <li>Gioi tinh: <%- sinhVien.nu ? 'Nu' : 'Nam' %></li>
+    <li>HocBong: <%- sinhVien.hocBong%></li>
+    <!-- Using js -->
+    <!-- <button
+      class="btn btn-danger"
+      data-id="<%- sinhVien._id%>"
+      id="deleteSinhVien"
+    >
+      delete
+    </button> -->
+
+    <div class="d-flex">
+      <!-- Using form[get] -->
+      <form method="GET" action="/v1/auth/sinh-vien/<%-sinhVien._id%>">
+        <button class="btn btn-danger" type="submit">delete</button>
+      </form>
+
+      <button class="btn btn-info" type="submit">
+        <a class="text-dark" href="/v1/auth/update-info/<%-sinhVien._id%>"
+          >update</a
+        >
+      </button>
+    </div>
+    <li>------------------------------------</li>
+    <% }); %>
+  </ul>
+</div>

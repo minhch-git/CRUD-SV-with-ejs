@@ -1,0 +1,34 @@
+<% extend('../master') %>
+<!-- -------------------------------------------- -->
+<!-- --------------- HOME PAGE ------------------ -->
+<!-- -------------------------------------------- -->
+<div class="home">
+  <!-- Content -->
+  <div class="posts_container">
+    <!-- posts -->
+    <div class="posts_wrapper">
+      <!-- posts content container -->
+      <% posts.forEach(function(post){ %>
+      <div class="post">
+        <!-- <div class="post__action-container">${retweetText}</div> -->
+        <div class="post_main-content-container">
+          <!-- post content -->
+          <div class="post_content-container">
+            <!-- post header -->
+            <div class="post_header">
+              <!-- info -->
+              <a class="displayName" href="/profile/"><%-post.user.name%></a>
+              <span class="username">@<%-post.user.name%></span>
+              <span class="date"><%-post.createAt%></span>
+            </div>
+            <!-- post body -->
+            <div class="post_body">
+              <span><%-post.content %></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% }); %>
+    </div>
+  </div>
+</div>
